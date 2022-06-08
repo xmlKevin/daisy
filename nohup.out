@@ -1,0 +1,5 @@
+user name : 546060808@qq.com
+transfers : 14.37GB
+member expired date : 2099-12-30 08:00:00 -08:00
+thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: Custom { kind: Other, error: "server exited unexpectly" }', pigcha-core/src/bin/local2.rs:258:36
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
