@@ -1,7 +1,7 @@
 package email
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
   @Desc : 发送邮件
 */
 

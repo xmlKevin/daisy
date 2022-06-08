@@ -474,7 +474,7 @@ info:
     添加qq群: 1127401830 进入技术交流群 请备注，谢谢！
   license:
     name: MIT
-    url: https://github.com/lanyulei/daisy/blob/master/LICENSE
+    url: https://github.com/xmlKevin/daisy/blob/master/LICENSE
   title: daisy API
   version: 0.0.1
 paths:

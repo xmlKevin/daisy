@@ -9,7 +9,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func RegisterDashboardRouter(v1 *gin.RouterGroup, authMiddleware *jwt.GinJWTMiddleware) {

@@ -11,7 +11,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func InitData(c *gin.Context) {

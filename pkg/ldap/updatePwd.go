@@ -11,7 +11,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func LdapUpdatePwd(username string, oldPassword string, newPassword string) (err error) {

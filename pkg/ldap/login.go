@@ -7,7 +7,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func LdapLogin(username string, password string) (userInfo *ldap.Entry, err error) {

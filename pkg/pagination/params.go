@@ -7,7 +7,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func RequestParams(c *gin.Context) map[string]interface{} {

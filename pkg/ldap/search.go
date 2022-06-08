@@ -13,7 +13,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func getLdapFields() (ldapFields []map[string]string, err error) {

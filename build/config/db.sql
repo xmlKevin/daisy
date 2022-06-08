@@ -98,7 +98,7 @@ INSERT INTO `casbin_rule`(`p_type`, `v0`, `v1`, `v2`, `v3`, `v4`, `v5`) VALUES (
 COMMIT;
 
 BEGIN;
-INSERT INTO `sys_dept`(`dept_id`, `parent_id`, `dept_path`, `dept_name`, `sort`, `leader`, `phone`, `email`, `status`, `create_by`, `update_by`, `create_time`, `update_time`) VALUES (1, 0, '/0/1', '磊哥科技', 0, null, '', 'lanyulei@fdevops.com', 0, '1', '1', '2021-02-24 21:30:59', '2021-02-24 21:30:59');
+INSERT INTO `sys_dept`(`dept_id`, `parent_id`, `dept_path`, `dept_name`, `sort`, `leader`, `phone`, `email`, `status`, `create_by`, `update_by`, `create_time`, `update_time`) VALUES (1, 0, '/0/1', '磊哥科技', 0, null, '', 'xmlKevin@fdevops.com', 0, '1', '1', '2021-02-24 21:30:59', '2021-02-24 21:30:59');
 INSERT INTO `sys_dept`(`dept_id`, `parent_id`, `dept_path`, `dept_name`, `sort`, `leader`, `phone`, `email`, `status`, `create_by`, `update_by`, `create_time`, `update_time`) VALUES (7, 1, '/0/1/7', '研发部', 1, null, '', '', 0, '1', '1', '2021-02-24 21:30:59', '2021-02-24 21:30:59');
 INSERT INTO `sys_dept`(`dept_id`, `parent_id`, `dept_path`, `dept_name`, `sort`, `leader`, `phone`, `email`, `status`, `create_by`, `update_by`, `create_time`, `update_time`) VALUES (8, 1, '/0/1/8', '运维部', 0, null, '', '', 0, '1', NULL, '2021-02-24 21:30:59', '2021-02-24 21:30:59');
 INSERT INTO `sys_dept`(`dept_id`, `parent_id`, `dept_path`, `dept_name`, `sort`, `leader`, `phone`, `email`, `status`, `create_by`, `update_by`, `create_time`, `update_time`) VALUES (9, 1, '/0/1/9', '客服部', 0, null, '', '', 0, '1', NULL, '2021-02-24 21:30:59', '2021-02-24 21:30:59');
@@ -490,8 +490,8 @@ INSERT INTO `sys_role_menu`(`role_id`, `menu_id`, `role_name`, `create_by`, `upd
 COMMIT;
 
 BEGIN;
-INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (1, 'lanyulei', '13818888888', 1, NULL, '', '0', '1@qq.com', 1, 1, '1', '1', NULL, 0, 'admin', '$2a$10$cKFFTCzGOvaIHHJY2K45Zuwt8TD6oPzYi4s5MzYIBAWCLL6ZhouP2');
-INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (2, 'lanyulei', '13211111111', 3, NULL, NULL, '0', 'q@q.com', 8, 2, '1', '1', NULL, 0, 'lanyulei', '$2a$10$oDXQLs1W7n19sjc64bCpHeuti1jhN6r5hDz0iSqZRQMJE2eym2ec6');
+INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (1, 'xmlKevin', '13818888888', 1, NULL, '', '0', '1@qq.com', 1, 1, '1', '1', NULL, 0, 'admin', '$2a$10$cKFFTCzGOvaIHHJY2K45Zuwt8TD6oPzYi4s5MzYIBAWCLL6ZhouP2');
+INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (2, 'xmlKevin', '13211111111', 3, NULL, NULL, '0', 'q@q.com', 8, 2, '1', '1', NULL, 0, 'xmlKevin', '$2a$10$oDXQLs1W7n19sjc64bCpHeuti1jhN6r5hDz0iSqZRQMJE2eym2ec6');
 INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (3, '李四', '13838385438', 2, '', '', '0', 'qq@qq.com', 7, 2, '1', '1', '', 0, 'lisi', '$2a$10$DejldFea5.hGZGC7/oVN9OLDrHAWgu9l29RDz9FomLnWnro4umYl2');
 INSERT INTO `sys_user`(`user_id`, `nick_name`, `phone`, `role_id`, `salt`, `avatar`, `sex`, `email`, `dept_id`, `post_id`, `create_by`, `update_by`, `remark`, `status`, `username`, `password`) VALUES (4, '王五', '13535353535', 3, '', '', '2', 'qq@qq.com', 8, 2, '1', '1', '', 0, 'wangwu', '$2a$10$3.RT6rpXANXvvlibX6PzU.FGA2CvfDxd1UmJ2H5zTzF4sYocbvsTO');
 COMMIT;

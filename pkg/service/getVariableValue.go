@@ -6,7 +6,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func GetVariableValue(stateList []interface{}, creator int) (err error) {

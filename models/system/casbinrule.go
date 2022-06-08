@@ -1,7 +1,7 @@
 package system
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 //casbin_rule

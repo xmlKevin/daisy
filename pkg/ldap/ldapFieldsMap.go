@@ -7,7 +7,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func LdapFieldsMap(ldapUserInfo *ldap.Entry) (userInfo system.SysUser, err error) {

@@ -9,7 +9,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func ExecTask(taskList []string, params string) {

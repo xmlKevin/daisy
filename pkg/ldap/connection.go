@@ -13,7 +13,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 var conn *ldap.Conn

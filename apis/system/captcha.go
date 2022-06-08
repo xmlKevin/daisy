@@ -9,7 +9,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 func GenerateCaptchaHandler(c *gin.Context) {

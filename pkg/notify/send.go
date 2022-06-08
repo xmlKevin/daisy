@@ -11,7 +11,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
   @同时发送多种通知方式
 */
 

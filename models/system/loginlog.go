@@ -6,7 +6,7 @@ import (
 )
 
 /*
-  @Author : lanyulei
+  @Author : xmlKevin
 */
 
 type LoginLog struct {

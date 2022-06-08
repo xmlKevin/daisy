@@ -22,7 +22,7 @@ var doc = `{
         "contact": {},
         "license": {
             "name": "MIT",
-            "url": "https://github.com/lanyulei/daisy/blob/master/LICENSE"
+            "url": "https://github.com/xmlKevin/daisy/blob/master/LICENSE"
         },
         "version": "{{.Version}}"
     },
