@@ -67,7 +67,7 @@ EOF
 function check_soft {
     local _soft_name=$1
     command -v ${_soft_name} > /dev/null || {
-    echo_red "请安装 ${_soft_name} 后再执行本脚本安装ferry。"
+    echo_red "请安装 ${_soft_name} 后再执行本脚本安装daisy。"
         exit 1
     }
 }
@@ -101,7 +101,7 @@ function isDirExist {
     [ ! -d "$1" ] && mkdir -p $1
 }
 
-function mk_ferry_dir {
+function mk_daisy_dir {
     echo "检查创建确认 build 以及子目录是否存在"
     isDirExist "${BASE_DIR}/build/log"
     isDirExist "${BASE_DIR}/build/template"
@@ -109,7 +109,7 @@ function mk_ferry_dir {
 }
 
 function init(){
-    mk_ferry_dir
+    mk_daisy_dir
     echo_green "\n>>> $(gettext '开始迁移配置信息...')"
     [ -f "${BASE_DIR}/config/db.sql" ] && cp -pf ${BASE_DIR}/config/db.sql ${BASE_DIR}/build/config
     [ -f "${BASE_DIR}/config/settings.yml" ] && cp -pf ${BASE_DIR}/config/settings.yml ${BASE_DIR}/build/config
@@ -159,9 +159,9 @@ function get_variables {
     read_from_input front_clone_from "$(gettext '请选择从哪里拉取前端代码，默认是gitee: 1:gitee, 2: github, 3:自定义地址')" "" "1"
 
     if [ $front_clone_from == 1 ]; then
-        ui_address="https://gitee.com/yllan/ferry_web.git"
+        ui_address="https://gitee.com/yllan/daisy_web.git"
     elif [ $front_clone_from == 2 ]; then
-        ui_address="https://github.com/lanyulei/ferry_web.git"
+        ui_address="https://github.com/lanyulei/daisy_web.git"
     else
         ui_address=${front_clone_from}
     fi
@@ -174,7 +174,7 @@ function get_variables {
 
 function config_front {
     echo_green "\n>>> $(gettext '替换程序访问地址...')"
-    cat > ${BASE_DIR}/ferry_web/.env.production << EOF
+    cat > ${BASE_DIR}/daisy_web/.env.production << EOF
 # just a flag
 ENV = 'production'
 
@@ -186,16 +186,16 @@ EOF
 
 function install_front {
     echo_green "\n>>> $(gettext '开始拉取前端程序...')"
-    read_from_input confirm "$(gettext '此处会执行 rm -rf ./ferry_web 的命令，若此命令不会造成当前环境的损伤则请继续')?" "y/n[y]" "y"
+    read_from_input confirm "$(gettext '此处会执行 rm -rf ./daisy_web 的命令，若此命令不会造成当前环境的损伤则请继续')?" "y/n[y]" "y"
     if [[ "${confirm}" != "y" ]]; then
         echo_red "结束此次编译"
         exit 1
     fi
 
 
-    if [ -d "${BASE_DIR}/ferry_web" ]; then
-        echo_green "\n>>> $(gettext '请稍等，正在删除 ferry_web ...')"
-        rm -rf ${BASE_DIR}/ferry_web
+    if [ -d "${BASE_DIR}/daisy_web" ]; then
+        echo_green "\n>>> $(gettext '请稍等，正在删除 daisy_web ...')"
+        rm -rf ${BASE_DIR}/daisy_web
     fi
     git clone $ui_address 
 
@@ -207,7 +207,7 @@ function install_front {
     echo_green "\n>>> $(gettext '开始安装前端依赖...')"
     cnpm_base_dir=$(dirname $(dirname $(which npm)))
     npm install -g cnpm --registry=https://registry.npm.taobao.org --prefix ${cnpm_base_dir}
-    cd ferry_web && cnpm install && npm run build:prod && cp -r web ../build/template && cp -r web/static/* ../build/static/
+    cd daisy_web && cnpm install && npm run build:prod && cp -r web ../build/template && cp -r web/static/* ../build/static/
 
 }
 
@@ -216,25 +216,25 @@ function install_backend {
 
     cd ${BASE_DIR} 
     if [ "$(uname)" == "Darwin" ];then
-        CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o ferry main.go
+        CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o daisy main.go
         result=$?
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ];then
-        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ferry main.go
+        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o daisy main.go
         result=$?
     elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ];then
-        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o ferry main.go
+        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o daisy main.go
         result=$?
     fi
 
     cd - &>/dev/null
 
-    if [ "$result" -ne 0 -o ! -f "${BASE_DIR}/ferry" ];then
+    if [ "$result" -ne 0 -o ! -f "${BASE_DIR}/daisy" ];then
         echo_red "编译后端代码失败，退出安装"
         exit 1
     fi
-    cp -r ${BASE_DIR}/ferry ${BASE_DIR}/build/
+    cp -r ${BASE_DIR}/daisy ${BASE_DIR}/build/
     cd ${BASE_DIR}/build 
-    ${BASE_DIR}/build/ferry init -c=config/settings.yml
+    ${BASE_DIR}/build/daisy init -c=config/settings.yml
     cd - &>/dev/null
 }
 
@@ -248,7 +248,7 @@ function install_app() {
 
 function start_backend {
     cd ${BASE_DIR}/build
-    ./ferry server -c=config/settings.yml 
+    ./daisy server -c=config/settings.yml 
 }
 
 function main {

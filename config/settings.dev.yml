@@ -6,14 +6,14 @@ settings:
     host: 127.0.0.1
     ishttps: false
     mode: dev
-    name: ferry-test
+    name: daisy-test
     port: "8002"
     readtimeout: 1
     writertimeout: 2
   database:
     dbtype: mysql
     host: 127.0.0.1
-    name: ferry
+    name: daisy
     password: forget0412
     port: 3306
     username: root
@@ -21,7 +21,7 @@ settings:
     gethost: 1
     url: localhost:9527
   email:
-    alias: ferry
+    alias: daisy
     host: smtp.163.com
     pass: your password
     port: 465
@@ -31,7 +31,7 @@ settings:
     maxidleconn: 0
     maxopenconn: 20000
   jwt:
-    secret: ferry
+    secret: daisy
     timeout: 86400
   ldap:
     anonymousquery: 0
@@ -51,7 +51,7 @@ settings:
     maxage: 30
     maxbackups: 300
     maxsize: 10240
-    path: ./logs/ferry.log
+    path: ./logs/daisy.log
   public:
     islocation: 0
   redis:
