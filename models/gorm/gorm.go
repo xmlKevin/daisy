@@ -1,6 +1,7 @@
 package gorm
 
 import (
+	"daisy/models/knowledge"
 	"daisy/models/process"
 	"daisy/models/system"
 
@@ -31,5 +32,9 @@ func AutoMigrate(db *gorm.DB) error {
 		new(process.Info),
 		new(process.History),
 		new(process.CirculationHistory),
+
+		//知识管理
+		new(knowledge.KM_Controller),
+		new(knowledge.KM_Comment),
 	).Error
 }
